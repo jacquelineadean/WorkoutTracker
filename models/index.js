@@ -1,4 +1,4 @@
-// Exporting an object containing all the model
+// Exporting an object containing model
 module.exports = {
     day: {
         type: Date,
