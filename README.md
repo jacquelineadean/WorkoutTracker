@@ -1,51 +1,54 @@
-# Unit 17 Nosql Homework: Workout Tracker
+# Workout Tracker 
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+## Description 
 
-## User Story
+> You can't manage what you cannot measure. 
+> - Peter Drucker
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+Tracking workout progress is a proven method for reaching fitness goals faster. The Workout Tracker is an application designed to empower users on their fitness journey by creating and tracking daily workouts. 
 
-## Business Context
+Users are able to log multiple exercises in a workout on a given day. Based on the type of exercise, each entry can be tracked by the name, weight, sets, reps, distance, and duration of exercise. 
 
-A consumer will reach their fitness goals quicker when they track their workout progress.
+The application utilizes a JavaScript front-end and a Node.js backend. The noSQL database used is MongoDB with a Mongoose schema. 
 
-## Acceptance Criteria
+Check out the deployed app on Heroku: 
+[Workout Tracker](https://workouttracker123.herokuapp.com/)
 
-When the user loads the page, they should be given the option to create a new workout, or continue with their last workout.
+![Main View](assets/main.png)
+![Stats View](assets/stats.png)
 
-The user should be able to:
+### User Story
+```
+As a user
+I want to be able to view create and track daily workouts
+so that I can achieve my fitness goals
+```
 
-  * Add exercises to a previous workout plan.
+# Table of Contents
+[Installation](#installation)
 
-  * Add new exercises to a new workout plan.
+[Usage](#usage)
 
-  * View multiple the combined weight of multiple exercises on the `stats` page.
+[Questions](#questions)
 
-## Commit Early and Often
+# Installation
+** In order to use the application, the user will need to have mongoDB installed. 
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+** Once the repository has been forked and cloned, the user will need to change directories into the repository and run the command "npm install" in order to retrieve the neccessary dependencies. 
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+# Usage
+** Once the application has been installed, the user will run "npm start" in the command line to initialize the server.
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
+** In the server, the user can interact with the application to log and track workouts.
 
-Follow these guidelines for committing:
 
-* Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
+# Questions
+For any questions, please connect with me:
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
+Github username: @Jacquelineadean
 
-* Don't commit half done work, for the sake of your collaborators (and your future self!)
+Github URL: [GitHub](https://github.com/jacquelineadean/)
 
-* Test your application before you commit to ensure functionality at every step in the development process
+LinkedIn: [LinkedIn](https://www.linkedin.com/in/jacqueline-dean-968a66150/)
 
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL to the deployed application
-
-* The URL to the Github repository
+Email: Jacquelineadean@gmail.com
