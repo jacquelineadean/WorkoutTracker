@@ -1,45 +1,46 @@
 // Require Models
 // ===================================================================
-const db = require("../models");
+const db = require('../models/workout.js');
+const router = require('express').Router();
 
 // Routes
 // ===================================================================
-module.exports = app => {
 
-    // POST route for creating a workout
-    app.post("/api/workouts", ({body}, res) => {
-        db.Workout.create({type: body.type})
-            .then(dbWorkout => {
-                res.json(dbWorkout)
-            }).catch(err => {
-                console.log(err);
-            });
-    });
-    // GET route for last workout
-    app.get("/api/workouts", (req, res) => {
-        db.Workout.find({})
+// POST route for creating a workout
+router.post('/api/workouts', (req, res) => {
+    db.create({})
+        .then(dbWorkout => {
+            res.json(dbWorkout)
+        }).catch(err => {
+            console.log(err);
+        });
+});
+// GET route for last workout
+router.get('/api/workouts', (req, res) => {
+    db.find({})
         .then(dbWorkout => {
             res.json(dbWorkout);
         }).catch(err => {
             console.log(err);
         })
-    });
-    // GET route for workouts in range
-    app.get("/api/workouts/range", (req, res) => {
-        db.Workout.find({})
-            .then(dbWorkout => {
-                res.json(dbWorkout);
-            }).catch(err => {
-                res.json(err);
-            });
-    });
-    // PUT route to add exercise
-    app.put("/api/workouts/:id", (req, res) => {
-        db.Workout.findByIdAndUpdate(req.params.id, req.body, {new: true})
-            .then(dbWorkout => {
-                res.json(dbWorkout);
-            }).catch(err => {
-                res.json(err);
-            })
-    })
-}
+});
+// GET route for workouts in range
+router.get('/api/workouts/range', (req, res) => {
+    db.find({})
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        }).catch(err => {
+            res.json(err);
+        });
+});
+// PUT route to add exercise
+router.put('/api/workouts/:id', ({params, body}, res) => {
+    db.findByIdAndUpdate(params.id, {$push : {exercises: body}}, { new: true })
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        }).catch(err => {
+            res.json(err);
+        })
+})
+
+module.exports = router;

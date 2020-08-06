@@ -1,15 +1,17 @@
 // Requiring path to so we can use relative routes to HTML files
 const path = require('path');
+const router = require('express').Router();
 
 // Routes
 // ===================================================================
-module.exports = app => {
-    // GET route for exercise html
-    app.get('/exercise', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/exercise.html'));
-    });
-    // GET route for stats html
-    app.get('/stats', (req, res) => {
-        res.sendFile(path.join(__dirname, '../public/stats.html'));
-    });
-}
+
+// GET route for exercise html
+router.get('/exercise', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/exercise.html'));
+});
+// GET route for stats html
+router.get('/stats', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/stats.html'));
+});
+
+module.exports = router;

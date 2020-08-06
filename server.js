@@ -3,7 +3,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const logger = require('morgan');
-const db = require('./models');
 
 // Connection
 // =====================================================
@@ -24,8 +23,8 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 
 // Routes
 // =====================================================
-require('./routes/routes.js')(app);
-require('./routes/html-routes.js')(app);
+app.use(require('./routes/routes.js'));
+app.use(require('./routes/html-routes.js'));
 
 // Listener
 // =====================================================
